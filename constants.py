@@ -1,0 +1,14 @@
+NUMBER_OF_DAYS = 24
+NUMBER_OF_FEATURES = 6
+LAYERS = 16
+UNITS_PER_LAYER = 512
+DATA_DIR = "./data/points"
+MULTIPLE_DATASETS = True
+SHUFFLE = True
+MODEL_NAME = "absoluteModel"
+TESTED_MODEL = "absoluteModel"
+LOOKUP_STEP = 24
+LEARNING_RATE = 5e-4
+FINAL_MODEL = "./ai/results/finalModel.h5"
+BATCH_SIZE = 256
+EPOCHS = 50

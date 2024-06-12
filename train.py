@@ -7,8 +7,8 @@ import numpy as np
 from pprint import pprint
 import tensorflow as tf
 
-# accepted_years = [2000, 2004, 2008, 2012, 2016, 2020]
-accepted_years = [2022]
+accepted_years = [2000, 2004, 2008, 2012, 2016, 2020]
+# accepted_years = [2022]
 
 def make_paths():
     if not os.path.isdir("results"):

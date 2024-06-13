@@ -1724,11 +1724,11 @@ root: {
   }
   
   .overlay-panel-110::before {
-    background: linear-gradient(to top right, var(--bottom-left-color-110), var(--top-right-color-110));
+    background: black
     }
     
     .overlay-panel-110::after {
-    background: linear-gradient(to bottom right, var(--top-left-color-110), var(--bottom-right-color-110));
+    background: black
     }
   
   .overlay-panel-111::before {

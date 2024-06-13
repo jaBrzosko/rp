@@ -65,6 +65,7 @@
   position: relative;
   color: white;
   font-size: 30px;
+  transition: color 1s ease;
 }
 
 .overlay-panel::before,

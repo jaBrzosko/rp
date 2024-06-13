@@ -1,0 +1,1822 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+.menu {
+  width: 30%;
+  background-color: black;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu li {
+  margin: 10px 0;
+}
+
+.spacer-menu {
+  width: 6%;
+  background-color: black;
+}
+
+.spacer-right {
+  width: 8%;
+  background-color: black;
+}
+
+.image {
+  position: relative;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+.image img {
+  max-width: 100%;
+  max-height: 85%;
+  object-fit: cover;
+}
+
+.overlay-grid {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0);
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-gap: 0px;
+  border-radius: 50px;
+}
+
+.overlay-panel {
+  width: 100%;
+  position: relative;
+  color: white;
+  font-size: 30px;
+  transition: color 1s ease;
+}
+
+.overlay-panel::before,
+.overlay-panel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+}
+
+.title {
+  text-align: center;
+  font-size: 40px;
+}
+
+.toggle-button-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.toggle-button {
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+  overflow: hidden;
+  width: 100%;
+  height: 40px;
+  border: 3px solid #27b7b7;
+}
+
+.toggle,
+.toggle {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  width: 100%;
+  height: 100%;
+}
+
+.toggle {
+  background-color: #46468c;
+}
+
+.toggle {
+  background-color: #46468c;
+}
+
+.toggle.active {
+  background-color: #299617;
+  color: white;
+}
+
+.toggle.active {
+  background-color: #299617;
+  color: white;
+}
+
+.toggle:hover {
+  color: #27b7b7;
+}
+
+.datepicker-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.custom-datepicker {
+  border-radius: 25px;
+  border: 4px solid #27b7b7;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.current-day-container {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.current-day-subcontainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.current-day {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 100px;
+}
+
+.current-day-title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.start-toggle {
+  background-color: #299617
+}
+
+.stop-toggle {
+  background-color: #D0312D
+}
+
+.restart-toggle {
+  background-color: #ED820D
+}
+
+.arrow {
+  user-select: none;
+}
+
+.arrow:hover {
+  color: #27b7b7;
+  cursor: pointer;
+}
+
+.legend-container {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
+  user-select: none;
+}
+
+.legend {
+  background: linear-gradient(90deg, #0000FF 0%, rgb(128, 128, 255) 18%, rgb(1, 255, 255) 35%, #FFFFFF 50%, rgb(255, 242, 178) 65%, rgb(255, 103, 0) 80%, #FF0000 100%);
+  height: 20px;
+  width: 100%;
+  border-radius: 25px;
+}
+
+.legend-text-container {
+  width: 100%;
+  display: flex;
+  margin-top: 20px;
+}
+
+.legend-text {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.legend-text-top {
+  align-items: right;
+  text-align: right;
+}
+
+.legend-text-bottom {
+  align-items: left;
+  text-align: left;
+}
+
+root: {
+  --bottom-left-color-1: rgba(0, 0, 0, 0);
+  --top-right-1: rgba(0, 0, 0, 0);
+  --bottom-right-1: rgba(0, 0, 0, 0);
+  --top-left-1: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-2: rgba(0, 0, 0, 0);
+  --top-right-2: rgba(0, 0, 0, 0);
+  --bottom-right-2: rgba(0, 0, 0, 0);
+  --top-left-2: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-3: rgba(0, 0, 0, 0);
+  --top-right-3: rgba(0, 0, 0, 0);
+  --bottom-right-3: rgba(0, 0, 0, 0);
+  --top-left-3: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-4: rgba(0, 0, 0, 0);
+  --top-right-4: rgba(0, 0, 0, 0);
+  --bottom-right-4: rgba(0, 0, 0, 0);
+  --top-left-4: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-5: rgba(0, 0, 0, 0);
+  --top-right-5: rgba(0, 0, 0, 0);
+  --bottom-right-5: rgba(0, 0, 0, 0);
+  --top-left-5: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-6: rgba(0, 0, 0, 0);
+  --top-right-6: rgba(0, 0, 0, 0);
+  --bottom-right-6: rgba(0, 0, 0, 0);
+  --top-left-6: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-7: rgba(0, 0, 0, 0);
+  --top-right-7: rgba(0, 0, 0, 0);
+  --bottom-right-7: rgba(0, 0, 0, 0);
+  --top-left-7: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-8: rgba(0, 0, 0, 0);
+  --top-right-8: rgba(0, 0, 0, 0);
+  --bottom-right-8: rgba(0, 0, 0, 0);
+  --top-left-8: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-9: rgba(0, 0, 0, 0);
+  --top-right-9: rgba(0, 0, 0, 0);
+  --bottom-right-9: rgba(0, 0, 0, 0);
+  --top-left-9: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-10: rgba(0, 0, 0, 0);
+  --top-right-10: rgba(0, 0, 0, 0);
+  --bottom-right-10: rgba(0, 0, 0, 0);
+  --top-left-10: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-11: rgba(0, 0, 0, 0);
+  --top-right-11: rgba(0, 0, 0, 0);
+  --bottom-right-11: rgba(0, 0, 0, 0);
+  --top-left-11: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-12: rgba(0, 0, 0, 0);
+  --top-right-12: rgba(0, 0, 0, 0);
+  --bottom-right-12: rgba(0, 0, 0, 0);
+  --top-left-12: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-13: rgba(0, 0, 0, 0);
+  --top-right-13: rgba(0, 0, 0, 0);
+  --bottom-right-13: rgba(0, 0, 0, 0);
+  --top-left-13: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-14: rgba(0, 0, 0, 0);
+  --top-right-14: rgba(0, 0, 0, 0);
+  --bottom-right-14: rgba(0, 0, 0, 0);
+  --top-left-14: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-15: rgba(0, 0, 0, 0);
+  --top-right-15: rgba(0, 0, 0, 0);
+  --bottom-right-15: rgba(0, 0, 0, 0);
+  --top-left-15: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-16: rgba(0, 0, 0, 0);
+  --top-right-16: rgba(0, 0, 0, 0);
+  --bottom-right-16: rgba(0, 0, 0, 0);
+  --top-left-16: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-17: rgba(0, 0, 0, 0);
+  --top-right-17: rgba(0, 0, 0, 0);
+  --bottom-right-17: rgba(0, 0, 0, 0);
+  --top-left-17: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-18: rgba(0, 0, 0, 0);
+  --top-right-18: rgba(0, 0, 0, 0);
+  --bottom-right-18: rgba(0, 0, 0, 0);
+  --top-left-18: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-19: rgba(0, 0, 0, 0);
+  --top-right-19: rgba(0, 0, 0, 0);
+  --bottom-right-19: rgba(0, 0, 0, 0);
+  --top-left-19: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-20: rgba(0, 0, 0, 0);
+  --top-right-20: rgba(0, 0, 0, 0);
+  --bottom-right-20: rgba(0, 0, 0, 0);
+  --top-left-20: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-21: rgba(0, 0, 0, 0);
+  --top-right-21: rgba(0, 0, 0, 0);
+  --bottom-right-21: rgba(0, 0, 0, 0);
+  --top-left-21: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-22: rgba(0, 0, 0, 0);
+  --top-right-22: rgba(0, 0, 0, 0);
+  --bottom-right-22: rgba(0, 0, 0, 0);
+  --top-left-22: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-23: rgba(0, 0, 0, 0);
+  --top-right-23: rgba(0, 0, 0, 0);
+  --bottom-right-23: rgba(0, 0, 0, 0);
+  --top-left-23: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-24: rgba(0, 0, 0, 0);
+  --top-right-24: rgba(0, 0, 0, 0);
+  --bottom-right-24: rgba(0, 0, 0, 0);
+  --top-left-24: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-25: rgba(0, 0, 0, 0);
+  --top-right-25: rgba(0, 0, 0, 0);
+  --bottom-right-25: rgba(0, 0, 0, 0);
+  --top-left-25: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-26: rgba(0, 0, 0, 0);
+  --top-right-26: rgba(0, 0, 0, 0);
+  --bottom-right-26: rgba(0, 0, 0, 0);
+  --top-left-26: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-27: rgba(0, 0, 0, 0);
+  --top-right-27: rgba(0, 0, 0, 0);
+  --bottom-right-27: rgba(0, 0, 0, 0);
+  --top-left-27: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-28: rgba(0, 0, 0, 0);
+  --top-right-28: rgba(0, 0, 0, 0);
+  --bottom-right-28: rgba(0, 0, 0, 0);
+  --top-left-28: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-29: rgba(0, 0, 0, 0);
+  --top-right-29: rgba(0, 0, 0, 0);
+  --bottom-right-29: rgba(0, 0, 0, 0);
+  --top-left-29: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-30: rgba(0, 0, 0, 0);
+  --top-right-30: rgba(0, 0, 0, 0);
+  --bottom-right-30: rgba(0, 0, 0, 0);
+  --top-left-30: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-31: rgba(0, 0, 0, 0);
+  --top-right-31: rgba(0, 0, 0, 0);
+  --bottom-right-31: rgba(0, 0, 0, 0);
+  --top-left-31: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-32: rgba(0, 0, 0, 0);
+  --top-right-32: rgba(0, 0, 0, 0);
+  --bottom-right-32: rgba(0, 0, 0, 0);
+  --top-left-32: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-33: rgba(0, 0, 0, 0);
+  --top-right-33: rgba(0, 0, 0, 0);
+  --bottom-right-33: rgba(0, 0, 0, 0);
+  --top-left-33: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-34: rgba(0, 0, 0, 0);
+  --top-right-34: rgba(0, 0, 0, 0);
+  --bottom-right-34: rgba(0, 0, 0, 0);
+  --top-left-34: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-35: rgba(0, 0, 0, 0);
+  --top-right-35: rgba(0, 0, 0, 0);
+  --bottom-right-35: rgba(0, 0, 0, 0);
+  --top-left-35: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-36: rgba(0, 0, 0, 0);
+  --top-right-36: rgba(0, 0, 0, 0);
+  --bottom-right-36: rgba(0, 0, 0, 0);
+  --top-left-36: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-37: rgba(0, 0, 0, 0);
+  --top-right-37: rgba(0, 0, 0, 0);
+  --bottom-right-37: rgba(0, 0, 0, 0);
+  --top-left-37: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-38: rgba(0, 0, 0, 0);
+  --top-right-38: rgba(0, 0, 0, 0);
+  --bottom-right-38: rgba(0, 0, 0, 0);
+  --top-left-38: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-39: rgba(0, 0, 0, 0);
+  --top-right-39: rgba(0, 0, 0, 0);
+  --bottom-right-39: rgba(0, 0, 0, 0);
+  --top-left-39: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-40: rgba(0, 0, 0, 0);
+  --top-right-40: rgba(0, 0, 0, 0);
+  --bottom-right-40: rgba(0, 0, 0, 0);
+  --top-left-40: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-41: rgba(0, 0, 0, 0);
+  --top-right-41: rgba(0, 0, 0, 0);
+  --bottom-right-41: rgba(0, 0, 0, 0);
+  --top-left-41: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-42: rgba(0, 0, 0, 0);
+  --top-right-42: rgba(0, 0, 0, 0);
+  --bottom-right-42: rgba(0, 0, 0, 0);
+  --top-left-42: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-43: rgba(0, 0, 0, 0);
+  --top-right-43: rgba(0, 0, 0, 0);
+  --bottom-right-43: rgba(0, 0, 0, 0);
+  --top-left-43: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-44: rgba(0, 0, 0, 0);
+  --top-right-44: rgba(0, 0, 0, 0);
+  --bottom-right-44: rgba(0, 0, 0, 0);
+  --top-left-44: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-45: rgba(0, 0, 0, 0);
+  --top-right-45: rgba(0, 0, 0, 0);
+  --bottom-right-45: rgba(0, 0, 0, 0);
+  --top-left-45: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-46: rgba(0, 0, 0, 0);
+  --top-right-46: rgba(0, 0, 0, 0);
+  --bottom-right-46: rgba(0, 0, 0, 0);
+  --top-left-46: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-47: rgba(0, 0, 0, 0);
+  --top-right-47: rgba(0, 0, 0, 0);
+  --bottom-right-47: rgba(0, 0, 0, 0);
+  --top-left-47: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-48: rgba(0, 0, 0, 0);
+  --top-right-48: rgba(0, 0, 0, 0);
+  --bottom-right-48: rgba(0, 0, 0, 0);
+  --top-left-48: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-49: rgba(0, 0, 0, 0);
+  --top-right-49: rgba(0, 0, 0, 0);
+  --bottom-right-49: rgba(0, 0, 0, 0);
+  --top-left-49: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-50: rgba(0, 0, 0, 0);
+  --top-right-50: rgba(0, 0, 0, 0);
+  --bottom-right-50: rgba(0, 0, 0, 0);
+  --top-left-50: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-51: rgba(0, 0, 0, 0);
+  --top-right-51: rgba(0, 0, 0, 0);
+  --bottom-right-51: rgba(0, 0, 0, 0);
+  --top-left-51: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-52: rgba(0, 0, 0, 0);
+  --top-right-52: rgba(0, 0, 0, 0);
+  --bottom-right-52: rgba(0, 0, 0, 0);
+  --top-left-52: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-53: rgba(0, 0, 0, 0);
+  --top-right-53: rgba(0, 0, 0, 0);
+  --bottom-right-53: rgba(0, 0, 0, 0);
+  --top-left-53: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-54: rgba(0, 0, 0, 0);
+  --top-right-54: rgba(0, 0, 0, 0);
+  --bottom-right-54: rgba(0, 0, 0, 0);
+  --top-left-54: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-55: rgba(0, 0, 0, 0);
+  --top-right-55: rgba(0, 0, 0, 0);
+  --bottom-right-55: rgba(0, 0, 0, 0);
+  --top-left-55: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-56: rgba(0, 0, 0, 0);
+  --top-right-56: rgba(0, 0, 0, 0);
+  --bottom-right-56: rgba(0, 0, 0, 0);
+  --top-left-56: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-57: rgba(0, 0, 0, 0);
+  --top-right-57: rgba(0, 0, 0, 0);
+  --bottom-right-57: rgba(0, 0, 0, 0);
+  --top-left-57: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-58: rgba(0, 0, 0, 0);
+  --top-right-58: rgba(0, 0, 0, 0);
+  --bottom-right-58: rgba(0, 0, 0, 0);
+  --top-left-58: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-59: rgba(0, 0, 0, 0);
+  --top-right-59: rgba(0, 0, 0, 0);
+  --bottom-right-59: rgba(0, 0, 0, 0);
+  --top-left-59: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-60: rgba(0, 0, 0, 0);
+  --top-right-60: rgba(0, 0, 0, 0);
+  --bottom-right-60: rgba(0, 0, 0, 0);
+  --top-left-60: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-61: rgba(0, 0, 0, 0);
+  --top-right-61: rgba(0, 0, 0, 0);
+  --bottom-right-61: rgba(0, 0, 0, 0);
+  --top-left-61: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-62: rgba(0, 0, 0, 0);
+  --top-right-62: rgba(0, 0, 0, 0);
+  --bottom-right-62: rgba(0, 0, 0, 0);
+  --top-left-62: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-63: rgba(0, 0, 0, 0);
+  --top-right-63: rgba(0, 0, 0, 0);
+  --bottom-right-63: rgba(0, 0, 0, 0);
+  --top-left-63: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-64: rgba(0, 0, 0, 0);
+  --top-right-64: rgba(0, 0, 0, 0);
+  --bottom-right-64: rgba(0, 0, 0, 0);
+  --top-left-64: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-65: rgba(0, 0, 0, 0);
+  --top-right-65: rgba(0, 0, 0, 0);
+  --bottom-right-65: rgba(0, 0, 0, 0);
+  --top-left-65: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-66: rgba(0, 0, 0, 0);
+  --top-right-66: rgba(0, 0, 0, 0);
+  --bottom-right-66: rgba(0, 0, 0, 0);
+  --top-left-66: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-67: rgba(0, 0, 0, 0);
+  --top-right-67: rgba(0, 0, 0, 0);
+  --bottom-right-67: rgba(0, 0, 0, 0);
+  --top-left-67: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-68: rgba(0, 0, 0, 0);
+  --top-right-68: rgba(0, 0, 0, 0);
+  --bottom-right-68: rgba(0, 0, 0, 0);
+  --top-left-68: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-69: rgba(0, 0, 0, 0);
+  --top-right-69: rgba(0, 0, 0, 0);
+  --bottom-right-69: rgba(0, 0, 0, 0);
+  --top-left-69: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-70: rgba(0, 0, 0, 0);
+  --top-right-70: rgba(0, 0, 0, 0);
+  --bottom-right-70: rgba(0, 0, 0, 0);
+  --top-left-70: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-71: rgba(0, 0, 0, 0);
+  --top-right-71: rgba(0, 0, 0, 0);
+  --bottom-right-71: rgba(0, 0, 0, 0);
+  --top-left-71: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-72: rgba(0, 0, 0, 0);
+  --top-right-72: rgba(0, 0, 0, 0);
+  --bottom-right-72: rgba(0, 0, 0, 0);
+  --top-left-72: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-73: rgba(0, 0, 0, 0);
+  --top-right-73: rgba(0, 0, 0, 0);
+  --bottom-right-73: rgba(0, 0, 0, 0);
+  --top-left-73: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-74: rgba(0, 0, 0, 0);
+  --top-right-74: rgba(0, 0, 0, 0);
+  --bottom-right-74: rgba(0, 0, 0, 0);
+  --top-left-74: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-75: rgba(0, 0, 0, 0);
+  --top-right-75: rgba(0, 0, 0, 0);
+  --bottom-right-75: rgba(0, 0, 0, 0);
+  --top-left-75: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-76: rgba(0, 0, 0, 0);
+  --top-right-76: rgba(0, 0, 0, 0);
+  --bottom-right-76: rgba(0, 0, 0, 0);
+  --top-left-76: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-77: rgba(0, 0, 0, 0);
+  --top-right-77: rgba(0, 0, 0, 0);
+  --bottom-right-77: rgba(0, 0, 0, 0);
+  --top-left-77: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-78: rgba(0, 0, 0, 0);
+  --top-right-78: rgba(0, 0, 0, 0);
+  --bottom-right-78: rgba(0, 0, 0, 0);
+  --top-left-78: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-79: rgba(0, 0, 0, 0);
+  --top-right-79: rgba(0, 0, 0, 0);
+  --bottom-right-79: rgba(0, 0, 0, 0);
+  --top-left-79: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-80: rgba(0, 0, 0, 0);
+  --top-right-80: rgba(0, 0, 0, 0);
+  --bottom-right-80: rgba(0, 0, 0, 0);
+  --top-left-80: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-81: rgba(0, 0, 0, 0);
+  --top-right-81: rgba(0, 0, 0, 0);
+  --bottom-right-81: rgba(0, 0, 0, 0);
+  --top-left-81: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-82: rgba(0, 0, 0, 0);
+  --top-right-82: rgba(0, 0, 0, 0);
+  --bottom-right-82: rgba(0, 0, 0, 0);
+  --top-left-82: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-83: rgba(0, 0, 0, 0);
+  --top-right-83: rgba(0, 0, 0, 0);
+  --bottom-right-83: rgba(0, 0, 0, 0);
+  --top-left-83: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-84: rgba(0, 0, 0, 0);
+  --top-right-84: rgba(0, 0, 0, 0);
+  --bottom-right-84: rgba(0, 0, 0, 0);
+  --top-left-84: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-85: rgba(0, 0, 0, 0);
+  --top-right-85: rgba(0, 0, 0, 0);
+  --bottom-right-85: rgba(0, 0, 0, 0);
+  --top-left-85: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-86: rgba(0, 0, 0, 0);
+  --top-right-86: rgba(0, 0, 0, 0);
+  --bottom-right-86: rgba(0, 0, 0, 0);
+  --top-left-86: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-87: rgba(0, 0, 0, 0);
+  --top-right-87: rgba(0, 0, 0, 0);
+  --bottom-right-87: rgba(0, 0, 0, 0);
+  --top-left-87: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-88: rgba(0, 0, 0, 0);
+  --top-right-88: rgba(0, 0, 0, 0);
+  --bottom-right-88: rgba(0, 0, 0, 0);
+  --top-left-88: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-89: rgba(0, 0, 0, 0);
+  --top-right-89: rgba(0, 0, 0, 0);
+  --bottom-right-89: rgba(0, 0, 0, 0);
+  --top-left-89: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-90: rgba(0, 0, 0, 0);
+  --top-right-90: rgba(0, 0, 0, 0);
+  --bottom-right-90: rgba(0, 0, 0, 0);
+  --top-left-90: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-91: rgba(0, 0, 0, 0);
+  --top-right-91: rgba(0, 0, 0, 0);
+  --bottom-right-91: rgba(0, 0, 0, 0);
+  --top-left-91: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-92: rgba(0, 0, 0, 0);
+  --top-right-92: rgba(0, 0, 0, 0);
+  --bottom-right-92: rgba(0, 0, 0, 0);
+  --top-left-92: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-93: rgba(0, 0, 0, 0);
+  --top-right-93: rgba(0, 0, 0, 0);
+  --bottom-right-93: rgba(0, 0, 0, 0);
+  --top-left-93: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-94: rgba(0, 0, 0, 0);
+  --top-right-94: rgba(0, 0, 0, 0);
+  --bottom-right-94: rgba(0, 0, 0, 0);
+  --top-left-94: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-95: rgba(0, 0, 0, 0);
+  --top-right-95: rgba(0, 0, 0, 0);
+  --bottom-right-95: rgba(0, 0, 0, 0);
+  --top-left-95: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-96: rgba(0, 0, 0, 0);
+  --top-right-96: rgba(0, 0, 0, 0);
+  --bottom-right-96: rgba(0, 0, 0, 0);
+  --top-left-96: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-97: rgba(0, 0, 0, 0);
+  --top-right-97: rgba(0, 0, 0, 0);
+  --bottom-right-97: rgba(0, 0, 0, 0);
+  --top-left-97: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-98: rgba(0, 0, 0, 0);
+  --top-right-98: rgba(0, 0, 0, 0);
+  --bottom-right-98: rgba(0, 0, 0, 0);
+  --top-left-98: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-99: rgba(0, 0, 0, 0);
+  --top-right-99: rgba(0, 0, 0, 0);
+  --bottom-right-99: rgba(0, 0, 0, 0);
+  --top-left-99: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-100: rgba(0, 0, 0, 0);
+  --top-right-100: rgba(0, 0, 0, 0);
+  --bottom-right-100: rgba(0, 0, 0, 0);
+  --top-left-100: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-101: rgba(0, 0, 0, 0);
+  --top-right-101: rgba(0, 0, 0, 0);
+  --bottom-right-101: rgba(0, 0, 0, 0);
+  --top-left-101: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-102: rgba(0, 0, 0, 0);
+  --top-right-102: rgba(0, 0, 0, 0);
+  --bottom-right-102: rgba(0, 0, 0, 0);
+  --top-left-102: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-103: rgba(0, 0, 0, 0);
+  --top-right-103: rgba(0, 0, 0, 0);
+  --bottom-right-103: rgba(0, 0, 0, 0);
+  --top-left-103: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-104: rgba(0, 0, 0, 0);
+  --top-right-104: rgba(0, 0, 0, 0);
+  --bottom-right-104: rgba(0, 0, 0, 0);
+  --top-left-104: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-105: rgba(0, 0, 0, 0);
+  --top-right-105: rgba(0, 0, 0, 0);
+  --bottom-right-105: rgba(0, 0, 0, 0);
+  --top-left-105: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-106: rgba(0, 0, 0, 0);
+  --top-right-106: rgba(0, 0, 0, 0);
+  --bottom-right-106: rgba(0, 0, 0, 0);
+  --top-left-106: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-107: rgba(0, 0, 0, 0);
+  --top-right-107: rgba(0, 0, 0, 0);
+  --bottom-right-107: rgba(0, 0, 0, 0);
+  --top-left-107: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-108: rgba(0, 0, 0, 0);
+  --top-right-108: rgba(0, 0, 0, 0);
+  --bottom-right-108: rgba(0, 0, 0, 0);
+  --top-left-108: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-109: rgba(0, 0, 0, 0);
+  --top-right-109: rgba(0, 0, 0, 0);
+  --bottom-right-109: rgba(0, 0, 0, 0);
+  --top-left-109: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-110: rgba(0, 0, 0, 0);
+  --top-right-110: rgba(0, 0, 0, 0);
+  --bottom-right-110: rgba(0, 0, 0, 0);
+  --top-left-110: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-111: rgba(0, 0, 0, 0);
+  --top-right-111: rgba(0, 0, 0, 0);
+  --bottom-right-111: rgba(0, 0, 0, 0);
+  --top-left-111: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-112: rgba(0, 0, 0, 0);
+  --top-right-112: rgba(0, 0, 0, 0);
+  --bottom-right-112: rgba(0, 0, 0, 0);
+  --top-left-112: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-113: rgba(0, 0, 0, 0);
+  --top-right-113: rgba(0, 0, 0, 0);
+  --bottom-right-113: rgba(0, 0, 0, 0);
+  --top-left-113: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-114: rgba(0, 0, 0, 0);
+  --top-right-114: rgba(0, 0, 0, 0);
+  --bottom-right-114: rgba(0, 0, 0, 0);
+  --top-left-114: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-115: rgba(0, 0, 0, 0);
+  --top-right-115: rgba(0, 0, 0, 0);
+  --bottom-right-115: rgba(0, 0, 0, 0);
+  --top-left-115: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-116: rgba(0, 0, 0, 0);
+  --top-right-116: rgba(0, 0, 0, 0);
+  --bottom-right-116: rgba(0, 0, 0, 0);
+  --top-left-116: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-117: rgba(0, 0, 0, 0);
+  --top-right-117: rgba(0, 0, 0, 0);
+  --bottom-right-117: rgba(0, 0, 0, 0);
+  --top-left-117: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-118: rgba(0, 0, 0, 0);
+  --top-right-118: rgba(0, 0, 0, 0);
+  --bottom-right-118: rgba(0, 0, 0, 0);
+  --top-left-118: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-119: rgba(0, 0, 0, 0);
+  --top-right-119: rgba(0, 0, 0, 0);
+  --bottom-right-119: rgba(0, 0, 0, 0);
+  --top-left-119: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-120: rgba(0, 0, 0, 0);
+  --top-right-120: rgba(0, 0, 0, 0);
+  --bottom-right-120: rgba(0, 0, 0, 0);
+  --top-left-120: rgba(0, 0, 0, 0);
+  
+  --bottom-left-color-121: rgba(0, 0, 0, 0);
+  --top-right-121: rgba(0, 0, 0, 0);
+  --bottom-right-121: rgba(0, 0, 0, 0);
+  --top-left-121: rgba(0, 0, 0, 0);
+  
+  }
+  
+  .overlay-panel-1::before {
+  background: black;
+  }
+  
+  .overlay-panel-1::after {
+  background: black;
+  }
+  
+  .overlay-panel-2::before {
+  background: black;
+  }
+  
+  .overlay-panel-2::after {
+  background: black;
+  }
+  
+  .overlay-panel-3::before {
+  background: black;
+  }
+  
+  .overlay-panel-3::after {
+  background: black;
+  }
+  
+  .overlay-panel-4::before {
+  background: black;
+  }
+  
+  .overlay-panel-4::after {
+  background: black;
+  }
+  
+  .overlay-panel-5::before {
+  background: black;
+  }
+  
+  .overlay-panel-5::after {
+  background: black;
+  }
+  
+  .overlay-panel-6::before {
+  background: black;
+  }
+  
+  .overlay-panel-6::after {
+  background: black;
+  }
+  
+  .overlay-panel-7::before {
+  background: black;
+  }
+  
+  .overlay-panel-7::after {
+  background: black;
+  }
+  
+  .overlay-panel-8::before {
+  background: black;
+  }
+  
+  .overlay-panel-8::after {
+  background: black;
+  }
+  
+  .overlay-panel-9::before {
+  background: black;
+  }
+  
+  .overlay-panel-9::after {
+  background: black;
+  }
+  
+  .overlay-panel-10::before {
+  background: black;
+  }
+  
+  .overlay-panel-10::after {
+  background: black;
+  }
+  
+  .overlay-panel-11::before {
+    background: linear-gradient(to top left, var(--bottom-left-color-11), var(--bottom-left-color-11));
+    }
+    
+    .overlay-panel-11::after {
+    background: linear-gradient(to bottom right, var(--bottom-left-color-11), var(--bottom-left-color-11));
+    }
+  
+  .overlay-panel-12::before {
+    background: linear-gradient(to top right, var(--top-right-color-12), var(--bottom-right-color-12));
+    }
+    
+    .overlay-panel-12::after {
+    background: linear-gradient(to bottom left, var(--top-right-color-12), var(--bottom-right-color-12));
+    }
+  
+  .overlay-panel-13::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-13), var(--top-right-color-13));
+  }
+  
+  .overlay-panel-13::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-13), var(--bottom-right-color-13));
+  }
+  
+  .overlay-panel-14::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-14), var(--top-right-color-14));
+  }
+  
+  .overlay-panel-14::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-14), var(--bottom-right-color-14));
+  }
+  
+  .overlay-panel-15::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-15), var(--top-right-color-15));
+  }
+  
+  .overlay-panel-15::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-15), var(--bottom-right-color-15));
+  }
+  
+  .overlay-panel-16::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-16), var(--top-right-color-16));
+  }
+  
+  .overlay-panel-16::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-16), var(--bottom-right-color-16));
+  }
+  
+  .overlay-panel-17::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-17), var(--top-right-color-17));
+  }
+  
+  .overlay-panel-17::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-17), var(--bottom-right-color-17));
+  }
+  
+  .overlay-panel-18::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-18), var(--top-right-color-18));
+  }
+  
+  .overlay-panel-18::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-18), var(--bottom-right-color-18));
+  }
+  
+  .overlay-panel-19::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-19), var(--top-right-color-19));
+  }
+  
+  .overlay-panel-19::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-19), var(--bottom-right-color-19));
+  }
+  
+  .overlay-panel-20::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-20), var(--top-right-color-20));
+  }
+  
+  .overlay-panel-20::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-20), var(--bottom-right-color-20));
+  }
+  
+  .overlay-panel-21::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-21), var(--top-right-color-21));
+  }
+  
+  .overlay-panel-21::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-21), var(--bottom-right-color-21));
+  }
+  
+  .overlay-panel-22::before {
+    background: linear-gradient(to top right, var(--top-left-color-22), var(--bottom-left-color-22));
+    }
+    
+    .overlay-panel-22::after {
+    background: linear-gradient(to bottom left, var(--top-left-color-22), var(--bottom-left-color-22));
+    }
+
+  .overlay-panel-23::before {
+    background: linear-gradient(to top right, var(--top-right-color-23), var(--bottom-right-color-23));
+    }
+    
+    .overlay-panel-23::after {
+    background: linear-gradient(to bottom left, var(--top-right-color-23), var(--bottom-right-color-23));
+    }
+  
+  .overlay-panel-24::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-24), var(--top-right-color-24));
+  }
+  
+  .overlay-panel-24::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-24), var(--bottom-right-color-24));
+  }
+  
+  .overlay-panel-25::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-25), var(--top-right-color-25));
+  }
+  
+  .overlay-panel-25::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-25), var(--bottom-right-color-25));
+  }
+  
+  .overlay-panel-26::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-26), var(--top-right-color-26));
+  }
+  
+  .overlay-panel-26::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-26), var(--bottom-right-color-26));
+  }
+  
+  .overlay-panel-27::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-27), var(--top-right-color-27));
+  }
+  
+  .overlay-panel-27::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-27), var(--bottom-right-color-27));
+  }
+  
+  .overlay-panel-28::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-28), var(--top-right-color-28));
+  }
+  
+  .overlay-panel-28::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-28), var(--bottom-right-color-28));
+  }
+  
+  .overlay-panel-29::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-29), var(--top-right-color-29));
+  }
+  
+  .overlay-panel-29::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-29), var(--bottom-right-color-29));
+  }
+  
+  .overlay-panel-30::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-30), var(--top-right-color-30));
+  }
+  
+  .overlay-panel-30::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-30), var(--bottom-right-color-30));
+  }
+  
+  .overlay-panel-31::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-31), var(--top-right-color-31));
+  }
+  
+  .overlay-panel-31::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-31), var(--bottom-right-color-31));
+  }
+  
+  .overlay-panel-32::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-32), var(--top-right-color-32));
+  }
+  
+  .overlay-panel-32::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-32), var(--bottom-right-color-32));
+  }
+  
+  .overlay-panel-33::before {
+    background: linear-gradient(to top right, var(--top-left-color-33), var(--bottom-left-color-33));
+    }
+    
+    .overlay-panel-33::after {
+    background: linear-gradient(to bottom left, var(--top-left-color-33), var(--bottom-left-color-33));
+    }
+
+    .overlay-panel-34::before {
+      background: linear-gradient(to top right, var(--top-right-color-34), var(--bottom-right-color-34));
+      }
+      
+      .overlay-panel-34::after {
+      background: linear-gradient(to bottom left, var(--top-right-color-34), var(--bottom-right-color-34));
+      }
+  
+  .overlay-panel-35::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-35), var(--top-right-color-35));
+  }
+  
+  .overlay-panel-35::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-35), var(--bottom-right-color-35));
+  }
+  
+  .overlay-panel-36::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-36), var(--top-right-color-36));
+  }
+  
+  .overlay-panel-36::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-36), var(--bottom-right-color-36));
+  }
+  
+  .overlay-panel-37::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-37), var(--top-right-color-37));
+  }
+  
+  .overlay-panel-37::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-37), var(--bottom-right-color-37));
+  }
+  
+  .overlay-panel-38::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-38), var(--top-right-color-38));
+  }
+  
+  .overlay-panel-38::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-38), var(--bottom-right-color-38));
+  }
+  
+  .overlay-panel-39::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-39), var(--top-right-color-39));
+  }
+  
+  .overlay-panel-39::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-39), var(--bottom-right-color-39));
+  }
+  
+  .overlay-panel-40::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-40), var(--top-right-color-40));
+  }
+  
+  .overlay-panel-40::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-40), var(--bottom-right-color-40));
+  }
+  
+  .overlay-panel-41::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-41), var(--top-right-color-41));
+  }
+  
+  .overlay-panel-41::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-41), var(--bottom-right-color-41));
+  }
+  
+  .overlay-panel-42::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-42), var(--top-right-color-42));
+  }
+  
+  .overlay-panel-42::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-42), var(--bottom-right-color-42));
+  }
+  
+  .overlay-panel-43::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-43), var(--top-right-color-43));
+  }
+  
+  .overlay-panel-43::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-43), var(--bottom-right-color-43));
+  }
+  
+  .overlay-panel-44::before {
+    background: linear-gradient(to top right, var(--top-left-color-44), var(--bottom-left-color-44));
+    }
+    
+    .overlay-panel-44::after {
+    background: linear-gradient(to bottom left, var(--top-left-color-44), var(--bottom-left-color-44));
+    }
+  
+    .overlay-panel-45::before {
+      background: linear-gradient(to top right, var(--top-right-color-45), var(--bottom-right-color-45));
+      }
+      
+      .overlay-panel-45::after {
+      background: linear-gradient(to bottom left, var(--top-right-color-45), var(--bottom-right-color-45));
+      }
+  
+  .overlay-panel-46::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-46), var(--top-right-color-46));
+  }
+  
+  .overlay-panel-46::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-46), var(--bottom-right-color-46));
+  }
+  
+  .overlay-panel-47::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-47), var(--top-right-color-47));
+  }
+  
+  .overlay-panel-47::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-47), var(--bottom-right-color-47));
+  }
+  
+  .overlay-panel-48::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-48), var(--top-right-color-48));
+  }
+  
+  .overlay-panel-48::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-48), var(--bottom-right-color-48));
+  }
+  
+  .overlay-panel-49::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-49), var(--top-right-color-49));
+  }
+  
+  .overlay-panel-49::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-49), var(--bottom-right-color-49));
+  }
+  
+  .overlay-panel-50::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-50), var(--top-right-color-50));
+  }
+  
+  .overlay-panel-50::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-50), var(--bottom-right-color-50));
+  }
+  
+  .overlay-panel-51::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-51), var(--top-right-color-51));
+  }
+  
+  .overlay-panel-51::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-51), var(--bottom-right-color-51));
+  }
+  
+  .overlay-panel-52::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-52), var(--top-right-color-52));
+  }
+  
+  .overlay-panel-52::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-52), var(--bottom-right-color-52));
+  }
+  
+  .overlay-panel-53::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-53), var(--top-right-color-53));
+  }
+  
+  .overlay-panel-53::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-53), var(--bottom-right-color-53));
+  }
+  
+  .overlay-panel-54::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-54), var(--top-right-color-54));
+  }
+  
+  .overlay-panel-54::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-54), var(--bottom-right-color-54));
+  }
+
+  .overlay-panel-55::before {
+    background: linear-gradient(to top right, var(--top-left-color-55), var(--bottom-left-color-55));
+    }
+    
+    .overlay-panel-55::after {
+    background: linear-gradient(to bottom left, var(--top-left-color-55), var(--bottom-left-color-55));
+    }
+  
+    .overlay-panel-56::before {
+      background: linear-gradient(to top right, var(--top-right-color-56), var(--bottom-right-color-56));
+      }
+      
+      .overlay-panel-56::after {
+      background: linear-gradient(to bottom left, var(--top-right-color-56), var(--bottom-right-color-56));
+      }
+  
+  .overlay-panel-57::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-57), var(--top-right-color-57));
+  }
+  
+  .overlay-panel-57::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-57), var(--bottom-right-color-57));
+  }
+  
+  .overlay-panel-58::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-58), var(--top-right-color-58));
+  }
+  
+  .overlay-panel-58::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-58), var(--bottom-right-color-58));
+  }
+  
+  .overlay-panel-59::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-59), var(--top-right-color-59));
+  }
+  
+  .overlay-panel-59::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-59), var(--bottom-right-color-59));
+  }
+  
+  .overlay-panel-60::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-60), var(--top-right-color-60));
+  }
+  
+  .overlay-panel-60::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-60), var(--bottom-right-color-60));
+  }
+  
+  .overlay-panel-61::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-61), var(--top-right-color-61));
+  }
+  
+  .overlay-panel-61::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-61), var(--bottom-right-color-61));
+  }
+  
+  .overlay-panel-62::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-62), var(--top-right-color-62));
+  }
+  
+  .overlay-panel-62::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-62), var(--bottom-right-color-62));
+  }
+  
+  .overlay-panel-63::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-63), var(--top-right-color-63));
+  }
+  
+  .overlay-panel-63::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-63), var(--bottom-right-color-63));
+  }
+  
+  .overlay-panel-64::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-64), var(--top-right-color-64));
+  }
+  
+  .overlay-panel-64::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-64), var(--bottom-right-color-64));
+  }
+  
+  .overlay-panel-65::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-65), var(--top-right-color-65));
+  }
+  
+  .overlay-panel-65::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-65), var(--bottom-right-color-65));
+  }
+
+  .overlay-panel-66::before {
+    background: linear-gradient(to top right, var(--top-left-color-66), var(--bottom-left-color-66));
+    }
+    
+    .overlay-panel-66::after {
+    background: linear-gradient(to bottom left, var(--top-left-color-66), var(--bottom-left-color-66));
+    }
+  
+    .overlay-panel-67::before {
+      background: linear-gradient(to top right, var(--top-right-color-67), var(--bottom-right-color-67));
+      }
+      
+      .overlay-panel-67::after {
+      background: linear-gradient(to bottom left, var(--top-right-color-67), var(--bottom-right-color-67));
+      }
+  
+  .overlay-panel-68::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-68), var(--top-right-color-68));
+  }
+  
+  .overlay-panel-68::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-68), var(--bottom-right-color-68));
+  }
+  
+  .overlay-panel-69::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-69), var(--top-right-color-69));
+  }
+  
+  .overlay-panel-69::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-69), var(--bottom-right-color-69));
+  }
+  
+  .overlay-panel-70::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-70), var(--top-right-color-70));
+  }
+  
+  .overlay-panel-70::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-70), var(--bottom-right-color-70));
+  }
+  
+  .overlay-panel-71::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-71), var(--top-right-color-71));
+  }
+  
+  .overlay-panel-71::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-71), var(--bottom-right-color-71));
+  }
+  
+  .overlay-panel-72::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-72), var(--top-right-color-72));
+  }
+  
+  .overlay-panel-72::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-72), var(--bottom-right-color-72));
+  }
+  
+  .overlay-panel-73::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-73), var(--top-right-color-73));
+  }
+  
+  .overlay-panel-73::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-73), var(--bottom-right-color-73));
+  }
+  
+  .overlay-panel-74::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-74), var(--top-right-color-74));
+  }
+  
+  .overlay-panel-74::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-74), var(--bottom-right-color-74));
+  }
+  
+  .overlay-panel-75::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-75), var(--top-right-color-75));
+  }
+  
+  .overlay-panel-75::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-75), var(--bottom-right-color-75));
+  }
+  
+  .overlay-panel-76::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-76), var(--top-right-color-76));
+  }
+  
+  .overlay-panel-76::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-76), var(--bottom-right-color-76));
+  }
+
+  .overlay-panel-77::before {
+    background: linear-gradient(to top right, var(--top-left-color-77), var(--bottom-left-color-77));
+    }
+    
+    .overlay-panel-77::after {
+    background: linear-gradient(to bottom left, var(--top-left-color-77), var(--bottom-left-color-77));
+    }
+  
+    .overlay-panel-78::before {
+      background: linear-gradient(to top right, var(--top-right-color-78), var(--bottom-right-color-78));
+      }
+      
+      .overlay-panel-78::after {
+      background: linear-gradient(to bottom left, var(--top-right-color-78), var(--bottom-right-color-78));
+      }
+  
+  .overlay-panel-79::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-79), var(--top-right-color-79));
+  }
+  
+  .overlay-panel-79::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-79), var(--bottom-right-color-79));
+  }
+  
+  .overlay-panel-80::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-80), var(--top-right-color-80));
+  }
+  
+  .overlay-panel-80::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-80), var(--bottom-right-color-80));
+  }
+  
+  .overlay-panel-81::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-81), var(--top-right-color-81));
+  }
+  
+  .overlay-panel-81::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-81), var(--bottom-right-color-81));
+  }
+  
+  .overlay-panel-82::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-82), var(--top-right-color-82));
+  }
+  
+  .overlay-panel-82::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-82), var(--bottom-right-color-82));
+  }
+  
+  .overlay-panel-83::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-83), var(--top-right-color-83));
+  }
+  
+  .overlay-panel-83::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-83), var(--bottom-right-color-83));
+  }
+  
+  .overlay-panel-84::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-84), var(--top-right-color-84));
+  }
+  
+  .overlay-panel-84::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-84), var(--bottom-right-color-84));
+  }
+  
+  .overlay-panel-85::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-85), var(--top-right-color-85));
+  }
+  
+  .overlay-panel-85::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-85), var(--bottom-right-color-85));
+  }
+  
+  .overlay-panel-86::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-86), var(--top-right-color-86));
+  }
+  
+  .overlay-panel-86::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-86), var(--bottom-right-color-86));
+  }
+  
+  .overlay-panel-87::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-87), var(--top-right-color-87));
+  }
+  
+  .overlay-panel-87::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-87), var(--bottom-right-color-87));
+  }
+
+  .overlay-panel-88::before {
+    background: linear-gradient(to top right, var(--top-left-color-88), var(--bottom-left-color-88));
+    }
+    
+    .overlay-panel-88::after {
+    background: linear-gradient(to bottom left, var(--top-left-color-88), var(--bottom-left-color-88));
+    }
+  
+    .overlay-panel-89::before {
+      background: linear-gradient(to top right, var(--top-right-color-89), var(--bottom-right-color-89));
+      }
+      
+      .overlay-panel-89::after {
+      background: linear-gradient(to bottom left, var(--top-right-color-89), var(--bottom-right-color-89));
+      }
+  
+  .overlay-panel-90::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-90), var(--top-right-color-90));
+  }
+  
+  .overlay-panel-90::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-90), var(--bottom-right-color-90));
+  }
+  
+  .overlay-panel-91::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-91), var(--top-right-color-91));
+  }
+  
+  .overlay-panel-91::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-91), var(--bottom-right-color-91));
+  }
+  
+  .overlay-panel-92::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-92), var(--top-right-color-92));
+  }
+  
+  .overlay-panel-92::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-92), var(--bottom-right-color-92));
+  }
+  
+  .overlay-panel-93::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-93), var(--top-right-color-93));
+  }
+  
+  .overlay-panel-93::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-93), var(--bottom-right-color-93));
+  }
+  
+  .overlay-panel-94::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-94), var(--top-right-color-94));
+  }
+  
+  .overlay-panel-94::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-94), var(--bottom-right-color-94));
+  }
+  
+  .overlay-panel-95::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-95), var(--top-right-color-95));
+  }
+  
+  .overlay-panel-95::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-95), var(--bottom-right-color-95));
+  }
+  
+  .overlay-panel-96::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-96), var(--top-right-color-96));
+  }
+  
+  .overlay-panel-96::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-96), var(--bottom-right-color-96));
+  }
+  
+  .overlay-panel-97::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-97), var(--top-right-color-97));
+  }
+  
+  .overlay-panel-97::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-97), var(--bottom-right-color-97));
+  }
+  
+  .overlay-panel-98::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-98), var(--top-right-color-98));
+  }
+  
+  .overlay-panel-98::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-98), var(--bottom-right-color-98));
+  }
+  
+  .overlay-panel-99::before {
+    background: linear-gradient(to top right, var(--top-left-color-99), var(--bottom-left-color-99));
+    }
+    
+    .overlay-panel-99::after {
+    background: linear-gradient(to bottom left, var(--top-left-color-99), var(--bottom-left-color-99));
+    }
+  
+    .overlay-panel-100::before {
+      background: linear-gradient(to top right, var(--top-right-color-100), var(--bottom-right-color-100));
+      }
+      
+      .overlay-panel-100::after {
+      background: linear-gradient(to bottom left, var(--top-right-color-100), var(--bottom-right-color-100));
+      }
+  
+  .overlay-panel-101::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-101), var(--top-right-color-101));
+  }
+  
+  .overlay-panel-101::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-101), var(--bottom-right-color-101));
+  }
+  
+  .overlay-panel-102::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-102), var(--top-right-color-102));
+  }
+  
+  .overlay-panel-102::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-102), var(--bottom-right-color-102));
+  }
+  
+  .overlay-panel-103::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-103), var(--top-right-color-103));
+  }
+  
+  .overlay-panel-103::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-103), var(--bottom-right-color-103));
+  }
+  
+  .overlay-panel-104::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-104), var(--top-right-color-104));
+  }
+  
+  .overlay-panel-104::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-104), var(--bottom-right-color-104));
+  }
+  
+  .overlay-panel-105::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-105), var(--top-right-color-105));
+  }
+  
+  .overlay-panel-105::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-105), var(--bottom-right-color-105));
+  }
+  
+  .overlay-panel-106::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-106), var(--top-right-color-106));
+  }
+  
+  .overlay-panel-106::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-106), var(--bottom-right-color-106));
+  }
+  
+  .overlay-panel-107::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-107), var(--top-right-color-107));
+  }
+  
+  .overlay-panel-107::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-107), var(--bottom-right-color-107));
+  }
+  
+  .overlay-panel-108::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-108), var(--top-right-color-108));
+  }
+  
+  .overlay-panel-108::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-108), var(--bottom-right-color-108));
+  }
+  
+  .overlay-panel-109::before {
+  background: linear-gradient(to top right, var(--bottom-left-color-109), var(--top-right-color-109));
+  }
+  
+  .overlay-panel-109::after {
+  background: linear-gradient(to bottom right, var(--top-left-color-109), var(--bottom-right-color-109));
+  }
+  
+  .overlay-panel-110::before {
+    background: linear-gradient(to top right, var(--bottom-left-color-110), var(--top-right-color-110));
+    }
+    
+    .overlay-panel-110::after {
+    background: linear-gradient(to bottom right, var(--top-left-color-110), var(--bottom-right-color-110));
+    }
+  
+  .overlay-panel-111::before {
+    background: black
+    }
+    
+    .overlay-panel-111::after {
+    background: black
+    }
+  
+  .overlay-panel-112::before {
+  background: black
+  }
+  
+  .overlay-panel-112::after {
+  background: black
+  }
+  
+  .overlay-panel-113::before {
+  background: black
+  }
+  
+  .overlay-panel-113::after {
+  background: black
+  }
+  
+  .overlay-panel-114::before {
+  background: black
+  }
+  
+  .overlay-panel-114::after {
+  background: black
+  }
+  
+  .overlay-panel-115::before {
+  background: black
+  }
+  
+  .overlay-panel-115::after {
+  background: black
+  }
+  
+  .overlay-panel-116::before {
+  background: black
+  }
+  
+  .overlay-panel-116::after {
+  background: black
+  }
+  
+  .overlay-panel-117::before {
+  background: black
+  }
+  
+  .overlay-panel-117::after {
+  background: black
+  }
+  
+  .overlay-panel-118::before {
+  background: black
+  }
+  
+  .overlay-panel-118::after {
+  background: black
+  }
+  
+  .overlay-panel-119::before {
+  background: black
+  }
+  
+  .overlay-panel-119::after {
+  background: black
+  }
+  
+  .overlay-panel-120::before {
+  background: black
+  }
+  
+  .overlay-panel-120::after {
+  background: black
+  }
+  
+  .overlay-panel-121::before {
+  background: black
+  }
+  
+  .overlay-panel-121::after {
+  background: black
+  }
+  
+  
